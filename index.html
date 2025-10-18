@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAE Simulado - Jefes</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <!-- Pantalla de inicio de sesión -->
+    <div id="loginScreen">
+        <h1>Iniciar Sesión</h1>
+        <input type="text" id="loginUser" placeholder="Usuario">
+        <input type="password" id="loginPass" placeholder="Contraseña">
+        <button id="loginBtn">Entrar</button>
+        <p id="loginError" style="color:#ff5252; font-weight:bold;"></p>
+    </div>
+
+    <!-- SAE (oculto hasta login) -->
+    <div id="saeScreen" style="display:none;">
+        <h1>SAE Simulado - Jefes</h1>
+        <button id="cerrarSesionBtn" style="background-color:#ff5252; color:#fff;">Cerrar sesión</button>
+
+        <!-- Agregar vehículo -->
+        <section>
+            <h2>Agregar vehículo</h2>
+            <input type="text" id="nuevoId" placeholder="ID del vehículo">
+            <input type="text" id="nuevoHorario" placeholder="Horario previsto (ej: 12:30 o 30)">
+            <button id="agregarBtn">Agregar</button>
+        </section>
+
+        <!-- Registrar retraso -->
+        <section>
+            <h2>Registrar retraso</h2>
+            <input type="text" id="vehiculoId" placeholder="ID del vehículo">
+            <input type="text" id="horaReal" placeholder="Hora real/retraso (ej: 12:45 o 15)">
+            <button id="registrarBtn">Registrar</button>
+        </section>
+
+        <!-- Actualizar horario previsto -->
+        <section>
+            <h2>Actualizar horario previsto</h2>
+            <input type="text" id="vehiculoHorarioId" placeholder="ID del vehículo">
+            <input type="text" id="nuevoHorarioPrevisto" placeholder="Nuevo horario previsto (ej: 12:30 o 30)">
+            <button id="actualizarHorarioBtn">Actualizar</button>
+        </section>
+
+        <!-- Gestión de cochera -->
+        <section>
+            <h2>Gestión de cochera</h2>
+            <input type="text" id="vehiculoCocheraId" placeholder="ID del vehículo">
+            <select id="estadoCochera">
+                <option value="Calle">Calle</option>
+                <option value="Garaje">Garaje</option>
+            </select>
+            <button id="actualizarCocheraBtn">Actualizar</button>
+        </section>
+
+        <!-- Borrar vehículo -->
+        <section>
+            <h2>Borrar vehículo</h2>
+            <input type="text" id="vehiculoBorrarId" placeholder="ID del vehículo">
+            <button id="borrarBtn">Borrar</button>
+        </section>
+
+        <!-- Estado de vehículos -->
+        <section>
+            <h2>Estado de vehículos</h2>
+            <label>
+                <input type="checkbox" id="mostrarHorario" checked>
+                Mostrar Horario Previsto
+            </label>
+            <table id="tablaVehiculos">
+                <tr>
+                    <th>ID</th>
+                    <th>Horario Previsto</th>
+                    <th>Hora Real</th>
+                    <th>Estado</th>
+                    <th>Ubicación</th>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Alertas -->
+        <section>
+            <h2>Alertas</h2>
+            <ul id="alertas"></ul>
+        </section>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
